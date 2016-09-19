@@ -3,7 +3,7 @@ def type
 end
 
 def project_name
-  "Charts.xcodeproj"
+  "Charts/Charts.xcodeproj"
 end
 
 def configuration
@@ -13,15 +13,14 @@ end
 def test_targets
   [
     :ios,
-    :tvos
+    # :tvos #no tvOS fbsnapshot
   ]
 end
 
 def schemes
   {
-    ios: 'Charts',
-    tvos: 'Charts',
-    osx: 'Charts'
+    ios: 'Charts-iOS',
+    tvos: 'Charts-TV'
   }
 end
 
@@ -35,7 +34,7 @@ end
 
 def devices
   {
-    ios: "name='iPhone 7'",
+    ios: "name='iPhone 6s'",
     osx: "arch='x86_64'",
     tvos: "name='Apple TV 1080p'"
   }

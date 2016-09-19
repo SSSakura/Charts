@@ -10,15 +10,15 @@ Pod::Spec.new do |s|
   s.osx.deployment_target = "10.11"
   s.source = { :git => "https://github.com/danielgindi/Charts.git", :tag => "v#{s.version}" }
   s.default_subspec = "Core"
-  s.prepare_command = "sed -i '' -e 's/import Charts//g' Source/ChartsRealm/**/*.swift"
+  s.prepare_command = "sed -i '' -e 's/import Charts//g' ChartsRealm/Classes/**/*.swift"
 
   s.subspec "Core" do |ss|
-    ss.source_files  = "Source/Charts/**/*.swift"
+    ss.source_files  = "Charts/Classes/**/*.swift"
   end
 
   s.subspec "Realm" do |ss|
-    ss.source_files  = "Source/ChartsRealm/**/*.swift"
+    ss.source_files  = "ChartsRealm/Classes/**/*.swift"
     ss.dependency "Charts/Core"
-    ss.dependency "RealmSwift", "~> 1.1"
+    ss.dependency "RealmSwift", "~> 1.0.2"
   end
 end
